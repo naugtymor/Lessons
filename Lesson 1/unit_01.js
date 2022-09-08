@@ -6,8 +6,6 @@ console.log('Nikita')
 
 console.log(09);
 
-
-
 // Task 3.
 // Выведите в консоль строку:
 // 'Добро '+'пожаловать '+' на курс'
@@ -28,14 +26,17 @@ console.log('Добро ' + 'пожаловать' + ' на курс');
 
 // Task 6.
 // Создайте на странице div с id=one. С помощью document.getElementById запишите в данный элемент текст 'Hello World'.
+
 document.getElementById('one').innerHTML = 'Hello World';
 
 // Task 7.
 // Создайте на странице div с id=two. С помощью document.getElementById запишите в данный элемент результат умножения 12 на 12. Умножение можно сделать с помощью знака звездочки ( цифра 8).
+
 document.getElementById('two').innerHTML = 12 * 12;
 
 // Task 8.
 // Создайте div с классом one. С помощью document.querySelector запишите в данный элемент текст 'Hello World'.
+
 document.querySelector('.one').innerHTML = 'Hello World';
 
 // Task 9.
@@ -48,16 +49,20 @@ document.querySelector('span').innerHTML = 'world';
 // Task 10.
 //Создайте пустой div c классом three. С помощью querySelector запишите внутрь div заголовок h3 с произвольным текстом.
 
+document.querySelector('.three').innerHTML = '<h3>Nikitos</h3>';
 
 // Task 11.
 // Создайте пустой div c классом four. С помощью querySelector запишите внутрь div заголовок h4 с произвольным текстом и параграф p с произвольным текстом. Подсказка, чтобы дописывать внутрь элемента используейте не innerHTML = , а innerHTML += (плюс равно без пробела).
 
-
+document.querySelector('.four').innerHTML = '<h4>Barbos</h4>';
+document.querySelector('.four').innerHTML += '<p>This is me</p>';
 
 // Task 12.
 // Создайте div с классом five. Получите его в переменную a. С помощью innerHTML запишите внутрь переменной a число 3.1415. Изучите как в JS пишутся дроби - через точку или через запятую!
 
-
+let a = document.querySelector('.five');
+a.innerHTML = 3.1415;
+console.log(a);
 
 // Task 13.
 // Создайте div с классом seven. Получите его в переменную div7. С помощью innerHTML запишите в него строку:
