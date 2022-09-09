@@ -1,44 +1,63 @@
 // Task 1.
 // Создайте две переменные a = 7 и b = 9. Выведите в консоль результа умножения a на b.
 
+let a = 7;
+let b = 9;
+console.log(a * b);
+
 // Task 2.
 // Создайте две переменные c = 7 и d = 9. Выведите на страницу в .out-2 результат деления c на d.
 
-// document.querySelector('.out-2').textContent = 
+let c = 7;
+let d = 9;
+document.querySelector('.out-2').textContent = c * d;
 
 // Task 3.
 // Создайте две переменные e = 3 и f = 5. Выведите на страницу  в .out-3 результат сложения e + f.
 
-// document.querySelector('.out-3').textContent = 
+let e = 3;
+let f = 5;
+document.querySelector('.out-3').textContent = e + f;
 
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
 
-// document.querySelector('.out-4').textContent = 
+let e1 = '3';
+let f1 = 5;
+document.querySelector('.out-4').textContent = e1 + f1;
 
 // Task 5.
 // Создайте две переменные e2 = 3 и f2 = 0. Выведите на страницу  в .out-5 результат деления e2 на f2.
 
-// document.querySelector('.out-5').textContent = 
+let e2 = 3;
+let f2 = 0;
+document.querySelector('.out-5').textContent = e2 / f2;
 
 // Task 6.
 // Создайте две переменные e3 = 3 и f3 = 'Hello'. Выведите на страницу  в .out-6 результат сложения двух переменных.
 
-// document.querySelector('.out-6').textContent = 
+let e3 = 3;
+let f3 = 'Hello';
+document.querySelector('.out-6').textContent = e3 + f3;
 
 // Task 7.
 // Создайте две переменные e4 = 3 и f4 = 'Hello'. Выведите на страницу  в .out-7 результат умножения двух переменных.
 
-// document.querySelector('.out-7').textContent = 
+let e4 = 3;
+let f4 = 'Hello';
+document.querySelector('.out-7').textContent = e4 * f4;
 
 // Task 8.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит в консоль то, что пользователь ввел в input.
 
-function t8() {
+let inputIn = document.querySelector('.i-8');
+let button = document.querySelector('.b-8');
 
+button.onclick = function () {
+    console.log(inputIn.value);
 }
 
-document.querySelector('.b-8').onclick = t8;
+//document.querySelector('.b-8').onclick = t8;
 
 // Task 9.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу,  что пользователь ввел в input. Добавьте очистку input после нажатия кнопки.
