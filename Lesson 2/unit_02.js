@@ -166,7 +166,6 @@ function t17() {
 
     let t = document.querySelector('.i-17').value;
     div17.innerHTML = parseInt(t);
-    console.log(parseInt(t))
 
 }
 
@@ -175,8 +174,12 @@ document.querySelector('.b-17').onclick = t17;
 // Task 18.
 // Создайте input type="text" куда пользователь может ввести строку и число. Создайте функцию, которая запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseFloat(t), и результат операции выведите в консоль. Прочитайте за эту операцию. Попробуйте по очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
 
-function t18() {
+let div18 = document.querySelector('.out-18');
 
+
+function t18() {
+    let t = document.querySelector('.i-18').value;
+    div18.innerHTML = parseFloat(t);
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -184,8 +187,15 @@ document.querySelector('.b-18').onclick = t18;
 // Task 19.
 // Создайте два input type=number, куда пользователь может ввести отрицательные числа. Выведите на страницу сумму данных чисел. Мы это делали! Зачем? Затем, что нужно понимать как влияет перевод в число с помощью + и parseInt на отрицательные числа!!!
 
-function t19() {
+let input19_1 = document.querySelector('.i-19-1');
+let input19_2 = document.querySelector('.i-19-2');
+let button19 = document.querySelector('.b-19');
+let div19 = document.querySelector('.out-19');
 
+function t19() {
+    // let a2 = +input19_1.value;
+    // let b2 = +input19_2.value;
+    div19.innerHTML = parseInt(input19_1.value) + parseInt(input19_2.value);
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -193,8 +203,15 @@ document.querySelector('.b-19').onclick = t19;
 // Task 20
 // Создайте опросник, куда пользователь может ввести имя, фамилию, возраст, род занятий. И кнопку. По нажатию кнопки выведите на страницу предложение 'Уважаемый Иван, Иванов, ваш возраст 33 года, по професси вы ...' куда поставьте соответствующие данные из inputов.
 
-function t20() {
+let input20_1 = document.querySelector('.i-20-1');
+let input20_2 = document.querySelector('.i-20-2');
+let input20_3 = document.querySelector('.i-20-3');
+let input20_4 = document.querySelector('.i-20-4');
+let button20 = document.querySelector('.b-20');
+let div20 = document.querySelector('.out-20');
 
+function t20() {
+    div20.innerHTML = 'Уважаемый ' + input20_1.value + ' ' + input20_2.value + ', ваш возраст ' + input20_3.value + ' года, по профессии вы ' + input20_4.value + '.';
 }
 
 document.querySelector('.b-20').onclick = t20;
