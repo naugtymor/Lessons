@@ -75,8 +75,12 @@ document.querySelector('.b-9').onclick = t9;
 // Task 10.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу число, которое ввел пользователь умноженное на 10.
 
-function t10() {
+let input10 = document.querySelector('.i-10');
+let button10 = document.querySelector('.b-10');
+let div10 = document.querySelector('.out-10')
 
+function t10() {
+    div10.innerHTML = input10.value * 10;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -84,8 +88,12 @@ document.querySelector('.b-10').onclick = t10;
 // Task 11.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу в .out-11 число, которое ввел пользователь и к нему добавленное число 10.
 
-function t11() {
+let input11 = document.querySelector('.i-11');
+let button11 = document.querySelector('.b-11');
+let div11 = document.querySelector('.out-11')
 
+function t11() {
+    div11.innerHTML = input11.value + 10;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -93,8 +101,14 @@ document.querySelector('.b-11').onclick = t11;
 // Task 12.
 // Создайте два input (i-12_1 и i-12-2) и кнопку. В первый input пользователь вводит имя, во второе фамилию. При нажатии кнопки выполняется функция, которая выводит в .out-12 строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия.
 
-function t12() {
+let input12_1 = document.querySelector('.i-12_1');
+let input12_2 = document.querySelector('.i-12_2');
+let button12 = document.querySelector('.b-12');
+let div12 = document.querySelector('.out-12')
 
+
+function t12() {
+    div12.innerHTML = input12_1.value + ' ' + input12_2.value;
 }
 
 document.querySelector('.b-12').onclick = t12;
