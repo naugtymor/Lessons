@@ -61,15 +61,40 @@ document.querySelector('.b-3').onclick = f3;
 
 // Task 4. Создайте на странице input[type=number] с классом i-4, куда пользователь может ввести год своего рождения. Есть кнопка b-4 которая запускает функцию f4. Функция должна вывести в  .out-4 число 1 если пользователю больше или равно 18 лет, и 0 если меньше.
 
-function f4() {
+let input4 = document.querySelector('.i-4');
+let out4 = document.querySelector('.out-4');
 
+function f4() {
+    let a = 2022 - +input4.value;
+    console.log(a)
+    if (a >= 18) {
+        out4.innerHTML = 1;
+    }
+    else {
+        out4.innerHTML = 0
+    }
 }
 
 document.querySelector('.b-4').onclick = f4;
 
 // Task 5. Создайте на странице input[type=number] с классом i-5, куда пользователь может ввести число. Есть кнопка b-5 которая запускает функцию f5. Функция должна вывести в  .out-5 символ m если число меньше нуля, 0 если число равно нулю и 1 если больше.
 
+let out5 = document.querySelector('.out-5');
+let input5 = document.querySelector('.i-5');
+
+
 function f5() {
+    let a = +input5.value;
+
+    if (a > 0) {
+        out5.innerHTML = 1;
+    }
+    else if (a < 0) {
+        out5.innerHTML = 'm';
+    }
+    else if (a == 0) {
+        out5.innerHTML = 0;
+    }
 
 }
 
@@ -78,7 +103,17 @@ document.querySelector('.b-5').onclick = f5;
 
 // Task 6. Создайте на странице input[type=number] с классом i-6, куда пользователь может ввести число. Есть кнопка b-6 которая запускает функцию f6. Функция должна вывести в  .out-6  слово even если число четное и odd если нечетное. Для проверки четности используется целочисленный остаток от деления на 2 (оператор %). Если остаток равен нулю  - четное, нет - нечетное.
 
+let input6 = document.querySelector('.i-6');
+let out6 = document.querySelector('.out-6');
+
 function f6() {
+    let a = +input6.value;
+    if (a % 2 == 0) {
+        out6.innerHTML = 'even';
+    }
+    else {
+        out6.innerHTML = 'odd';
+    }
 
 }
 
@@ -87,8 +122,14 @@ document.querySelector('.b-6').onclick = f6;
 // Task 7.
 // Даны 2 input - i-71 и i-72, оба - input[type=number]. При нажатии кнопки b-7 срабатывает функция f7. Функция должна число из i-71 возвести в степень i-72, вывести результат в  out-7. Для возведения в степень можно использовать **, или Math.pow.
 
-function f7() {
+let input7_1 = document.querySelector('.i-71');
+let input7_2 = document.querySelector('.i-72');
+let out7 = document.querySelector('.out-7');
 
+function f7() {
+    a = +input7_1.value;
+    b = +input7_2.value;
+    out7.innerHTML = Math.pow(a, b);
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -96,7 +137,21 @@ document.querySelector('.b-7').onclick = f7;
 // Task 8.
 // Дан select s-8, который содержит 3 значения: 1, 2, 3. Дана кнопка b-8. При ее  нажатии срабатывает функция f8. Функция должна получить выбранное в select число, потом с помощью switch case сравнить его поочередно с ‘1’, ‘2’, ‘3’. И если число выбрано - 1, то вывести в out-8 строку one, если 2 - two, если 3 - three.
 
+let out8 = document.querySelector('.out-8');
+let slct8 = document.querySelector('.s-8');
+
 function f8() {
+    let a = +slct8.value;
+    switch (a) {
+        case 1:
+            out8.innerHTML = 'one';
+            break
+        case 2:
+            out8.innerHTML = 'two';
+            break
+        case 3:
+            out8.innerHTML = 'three';
+    }
 
 }
 
@@ -109,8 +164,23 @@ document.querySelector('.b-8').onclick = f8;
 //     если от 44 до 64 - то 3.
 //     В противном случае, вывести 0.
 
-function f9() {
+let input9 = document.querySelector('.i-9');
+let out9 = document.querySelector('.out-9');
 
+function f9() {
+    let a = +input9.value;
+    if (a >= 1 && a <= 32) {
+        out9.innerHTML = 1;
+    }
+    else if (a >= 33 && a <= 43) {
+        out9.innerHTML = 2;
+    }
+    else if (a >= 44 && a <= 64) {
+        out9.innerHTML = 3;
+    }
+    else {
+        out9.innerHTML = 0;
+    }
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -118,8 +188,25 @@ document.querySelector('.b-9').onclick = f9;
 // Task 10
 // Дан select s-100. По нажатию кнопки, выведите value выбранного option в out-10.
 
-function f10() {
+let slct10 = document.querySelector('.s-100');
+let out10 = document.querySelector('.out-10')
 
+function f10() {
+    console.log(slct10.value);
+    switch (+slct10.value) {
+        case 6:
+            out10.innerHTML = slct10.value;
+            break;
+        case 7:
+            out10.innerHTML = slct10.value;
+            break;
+        case 11:
+            out10.innerHTML = slct10.value;
+            break;
+        case 9:
+            out10.innerHTML = slct10.value;
+
+    }
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -127,7 +214,25 @@ document.querySelector('.b-10').onclick = f10;
 // Task 11
 // Дан select s-110. По изменению состояния select (событие onchange) выведите value выбранного option в out-11.
 
+let slct11 = document.querySelector('.s-110');
+let out11 = document.querySelector('.out-11')
+
 function f11() {
+
+    switch (+slct11.value) {
+        case 6:
+            out11.innerHTML = slct11.value;
+            break;
+        case 7:
+            out11.innerHTML = slct11.value;
+            break;
+        case 11:
+            out11.innerHTML = slct11.value;
+            break;
+        case 9:
+            out11.innerHTML = slct11.value;
+
+    }
 
 }
 
