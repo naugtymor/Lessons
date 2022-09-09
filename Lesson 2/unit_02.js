@@ -50,11 +50,11 @@ document.querySelector('.out-7').textContent = e4 * f4;
 // Task 8.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит в консоль то, что пользователь ввел в input.
 
-let inputIn = document.querySelector('.i-8');
-let button = document.querySelector('.b-8');
+let input8 = document.querySelector('.i-8');
+let button8 = document.querySelector('.b-8');
 
-button.onclick = function () {
-    console.log(inputIn.value);
+button8.onclick = function () {
+    console.log(input8.value);
 }
 
 //document.querySelector('.b-8').onclick = t8;
@@ -62,8 +62,12 @@ button.onclick = function () {
 // Task 9.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу,  что пользователь ввел в input. Добавьте очистку input после нажатия кнопки.
 
-function t9() {
+let input9 = document.querySelector('.i-9');
+let button9 = document.querySelector('.b-9');
+let div9 = document.querySelector('.out-9')
 
+function t9() {
+    div9.innerHTML = input9.value;
 }
 
 document.querySelector('.b-9').onclick = t9;
