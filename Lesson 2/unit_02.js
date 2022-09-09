@@ -116,28 +116,43 @@ document.querySelector('.b-12').onclick = t12;
 // Task 13.
 // Создайте два input и кнопку. В input пользователь вводит числа. При нажатии кнопки выполняется функция, которая выводит сумму данных двух чисел на страницу в .out-13.
 
-function t13() {
+let input13_1 = document.querySelector('.i-13_1');
+let input13_2 = document.querySelector('.i-13_2');
+let button13 = document.querySelector('.b-13');
+let div13 = document.querySelector('.out-13');
 
+function t13() {
+    let a = +input13_1.value;
+    let b = +input13_2.value;
+    div13.innerHTML = a + b;
 }
 
 document.querySelector('.b-13').onclick = t13;
 
 // Task 14.
 // Создайте input .i-14 и пропишите ему в html value = 77. С помощью JS измените value на 'Hello'.
+//let input14 = document.querySelector('.i-14');
 
-// document.querySelector('.i-14').value = 
+document.querySelector('.i-14').value = 'Hello'
 
 // Task 15.
 // Создайте input i-15 и получите его в переменную y. В js выполните следующее присвоение: y.style.border = '2px solid red' . Изучите результат операции.
 
-// let y = 
-// y.style.border = 
+let y = document.querySelector('.i-15');
+y.style.border = '2px solid red';
 
 // Task 16.
 // Создайте два input type=number, куда пользователь может ввести числа. Выведите на страницу сумму данных чисел по нажатию кнопки b-16
 
-function t16() {
+let input16_1 = document.querySelector('.i-16-1');
+let input16_2 = document.querySelector('.i-16-2');
+let button16 = document.querySelector('.b-16');
+let div16 = document.querySelector('.out-16');
 
+function t16() {
+    let a1 = +input16_1.value;
+    let b1 = +input16_2.value;
+    div16.innerHTML = a1 + b1;
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -145,8 +160,13 @@ document.querySelector('.b-16').onclick = t16;
 // Task 17.
 // Создайте input type="text" куда пользователь может ввести строку и число. Создайте функцию, которая запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseInt(t), и результат операции выведите в out-17. Прочитайте за эту операцию. Попробуйте по очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
 
+let div17 = document.querySelector('.out-17');
+
 function t17() {
 
+    let t = document.querySelector('.i-17').value;
+    div17.innerHTML = parseInt(t);
+    console.log(parseInt(t))
 
 }
 
