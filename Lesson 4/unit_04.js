@@ -108,27 +108,38 @@ let out8 = document.querySelector('.out-8')
 function f8() {
     out8.innerHTML = '<div class = "form-control"><input class = "i-81"></input></div>';
     out8.innerHTML += '<button class = "b-81 button-primary">OK</button>';
+    console.log(out8);
 
-    // кнопку создаем через ....innerHTML = '<button....</button>
-    // т.е. как строку и в ставляем на страницу
-    //  потом получаем кнопку со страницы и вешаем событие
-    //    вашасозданнаякнопка.onclick = f81;
+    function f81() {
+        let a = document.querySelector('.out-81');
+        a.innerHTML = document.querySelector('.i-81').value;
+    }
+
+    document.querySelector('.b-81').onclick = f81;
 }
 
-
-function f81() {
-    let a = document.querySelector('.out-81');
-    console.log(a);
-    // a.innerHTML = document.querySelector('.i-81').value;
-}
 document.querySelector('.b-8').onclick = f8;
-document.querySelector('.b-81').onclick = f81;
+
+
+// кнопку создаем через ....innerHTML = '<button....</button>
+// т.е. как строку и в ставляем на страницу
+//  потом получаем кнопку со страницы и вешаем событие
+//    вашасозданнаякнопка.onclick = f81;
 
 
 // Task 9
 //Создайте один input(radio).r-9  и button.b-9 - при нажатии на button если radio.r-9 выбран (активен, checked) выводите в .out-9 - value прописанное в r-9, либо 0 если не активен. 
 
+let out9 = document.querySelector('.out-9')
+let input9 = document.querySelector('.r-9')
+
 function f9() {
+    if (input9.checked) {
+        out9.innerHTML = input9.value;
+    }
+    else {
+        out9.innerHTML = 0;
+    }
 
 }
 
@@ -137,9 +148,11 @@ document.querySelector('.b-9').onclick = f9;
 // Task 10
 // >Создайте input(color).i-10 и button.b-10 - при нажатии на кнопку окрашивайте div.out-10 выбранным цветом (имеется ввиду .style.background = ).
 
+let out10 = document.querySelector('.out-10');
+let input10 = document.querySelector('.i-10');
 
 function f10() {
-
+    out10.style.background = input10.value;
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -148,8 +161,12 @@ document.querySelector('.b-10').onclick = f10;
 // Task     11
 //   Создайте input(color).i-111 и input(color).i-112- два элемента и button.b-11 - при нажатии на кнопку присвойте цвет из первого input в value второго.
 
-function f11() {
+inp111 = document.querySelector('.i-111');
+inp112 = document.querySelector('.i-112');
 
+
+function f11() {
+    inp112.value = inp111.value;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -157,7 +174,11 @@ document.querySelector('.b-11').onclick = f11;
 // Task 12
 //   Создайте input(date).i-12 и button.b-12 - при нажатии на кнопку выводите на в  out-12 выбранную в input дату.
 
+let out12 = document.querySelector('.out-12');
+
+
 function f12() {
+    out12.innerHTML = document.querySelector('.i-12').value;
 
 }
 
@@ -166,8 +187,12 @@ document.querySelector('.b-12').onclick = f12;
 // Task 13
 //  Создайте input(range).i-13. При изменении положения ползунка i-13 выводите значение в out-13. Для события используйте oninput.
 
-function f13() {
+let input13 = document.querySelector('.i-13');
+let out13 = document.querySelector('.out-13');
 
+
+function f13() {
+    out13.innerHTML = input13.value;
 }
 
 document.querySelector('.i-13').oninput = f13;
@@ -175,8 +200,11 @@ document.querySelector('.i-13').oninput = f13;
 // Task 14
 // Создайте text-area.t-14 и button.b-14 - при нажатии на кнопку выводите на в out-14 текст введенный в t-14.
 
-function f14() {
+let out14 = document.querySelector('.out-14');
+let tarea14 = document.querySelector('.t-14');
 
+function f14() {
+    out14.innerHTML = tarea14.value;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -184,8 +212,13 @@ document.querySelector('.b-14').onclick = f14;
 // Task 15
 // Создайте text-area.t-15, input.i-15 и button.b-15 - при нажатии на кнопку выводите текст из input.i-15 в textarea.t-15 и на страницу в out-15.
 
-function f15() {
+let out15 = document.querySelector('.out-15');
+let input15 = document.querySelector('.i-15');
+let tarea15 = document.querySelector('.t-15');
 
+function f15() {
+    tarea15.innerHTML = input15.value;
+    out15.innerHTML = input15.value;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -193,18 +226,26 @@ document.querySelector('.b-15').onclick = f15;
 // Task 16
 // Создайте select.s-16 и button.b-16 - при нажатии на кнопку выводите в out-16 value выбранного option из s-16.
 
-function f16() {
-    // для получения выбранного option просто получите select в переменную и select.value;
+let out16 = document.querySelector('.out-16');
+let select16 = document.querySelector('.s-16');
 
+
+function f16() {
+    out16.innerHTML = select16.value;
 }
 
 document.querySelector('.b-16').onclick = f16;
 
+// для получения выбранного option просто получите select в переменную и select.value;
+
 // Task 17
 // Создайте select.s-17. Добавьте ему событие onchange, при наступлении которого запускается функция f17. Функция должна выводить в out-17 value выбранного в select option.
 
-function f17() {
+let out17 = document.querySelector('.out-17');
+let select17 = document.querySelector('.s-17');
 
+function f17() {
+    out17.innerHTML = select17.value;
 }
 
 document.querySelector('.s-17').onchange = f17;
