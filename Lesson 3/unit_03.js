@@ -308,17 +308,15 @@ let slct15_2 = document.querySelector('.s-152');
 let slct15_3 = document.querySelector('.s-153');
 let out15 = document.querySelector('.out-15');
 
-// function f15() {
-
-//     if (slct15_1 == 1 && slct15_2 == 1 && slct15_3)
-
-// }
-
 function f15() {
-    out15.innerHTML = slct15_1.value + slct15_3.value + slct15_2.value;
+
+    switch (slct15_3.value) {
+        case '&&':
+            out15.innerHTML = slct15_1.value + '&&' + slct15_2.value;
+            break;
+        case '||':
+            out15.innerHTML = slct15_1.value + '||' + slct15_2.value;
+    }
 }
 
 document.querySelector('.b-15').onclick = f15;
-
-
-
