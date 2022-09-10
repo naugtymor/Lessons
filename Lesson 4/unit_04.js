@@ -253,8 +253,12 @@ document.querySelector('.s-17').onchange = f17;
 // Task 18
 // Создайте select.s-18 и input.i-18. Добавьте на select событие onchange, при наступлении которого запускается функция f18. Функция должна выводить в input i-18 value выбранного в select option.
 
-function f18() {
+let input18 = document.querySelector('.i-18');
+let select18 = document.querySelector('.s-18');
 
+
+function f18() {
+    input18.value = select18.value;
 }
 
 document.querySelector('.s-18').onchange = f18;
@@ -262,8 +266,13 @@ document.querySelector('.s-18').onchange = f18;
 // Task 19
 // Создайте форму. В ней input(text).i-191 и input(password).i-192 - и кнопку button.b-19. По нажатию кнопки выводите значение text и password в out-19 через пробел. Обратите внимание на хитрость. Мы, кнопку сейчас повесили за пределами формы. Чуть позже мы рассмотрим почему это делали.
 
-function f19() {
+let out19 = document.querySelector('.out-19');
+let input191 = document.querySelector('.i-191');
+let input192 = document.querySelector('.i-192');
 
+function f19() {
+    out19.innerHTML = input191.value;
+    out19.innerHTML += ' ' + input192.value;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -273,13 +282,18 @@ document.querySelector('.b-19').onclick = f19;
 
 // очень внимательно изучите верстку!!! 
 // обратите внимание, что мы не используем class, а присвоили name!!!
+// console.log(form.elements['username'].value); // так можно обратиться к элементу внутри формы
+// console.log(form.elements['password'].value)
 
-function f20(e) {
-    e.preventDefault(); // чтобы форма не перезагружала страницу!!!!
+let out20 = document.querySelector('.out-20');
+
+function f20(event) {
+    event.preventDefault(); // чтобы форма не перезагружала страницу!!!!
     let form = document.querySelector('.f-20');
-    console.log(form.elements);
-    console.log(form.elements['username'].value); // так можно обратиться к элементу внутри формы
+    let uname = form.elements['username'].value;
+    let password = form.elements['password'].value;
 
+    out20.innerHTML = uname + ' ' + password;
 }
 
 document.querySelector('.b-20').onclick = f20;
