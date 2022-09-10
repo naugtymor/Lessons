@@ -81,12 +81,20 @@ document.querySelector('.b-6').onclick = f6;
 
 let out7_1 = document.querySelector('.out-71');
 let out7_2 = document.querySelector('.out-72');
+let inp7 = document.querySelector('.i-7');
 
 
 function f7() {
     out7_1.innerHTML = document.querySelector('.i-7').value;
 
-    if ()
+    let inp7 = document.querySelector('.i-7').value;
+    console.log(inp7.length);
+    if (inp7.length >= 6) {
+        out7_2.innerHTML = 1;
+    }
+    else if (inp7.length < 6) {
+        out7_2.innerHTML = 0;
+    }
 
 }
 
