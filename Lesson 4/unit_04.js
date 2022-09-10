@@ -103,19 +103,27 @@ document.querySelector('.b-7').onclick = f7;
 // Task 8.
 // Создайте div.out-8 и кнопку .b-8. При нажатии кнопки создавайте внутри div.out-8 элемент input.i-81 и кнопку .b-81 (innerHTML). Добавьте на созданную кнопку событие клик и запуск функции f81. Функция должна в .out-81 выводить value созданного input.i-81.
 
+let out8 = document.querySelector('.out-8')
+
 function f8() {
+    out8.innerHTML = '<div class = "form-control"><input class = "i-81"></input></div>';
+    out8.innerHTML += '<button class = "b-81 button-primary">OK</button>';
+
     // кнопку создаем через ....innerHTML = '<button....</button>
     // т.е. как строку и в ставляем на страницу
     //  потом получаем кнопку со страницы и вешаем событие
     //    вашасозданнаякнопка.onclick = f81;
-    //
 }
+
 
 function f81() {
-
+    let a = document.querySelector('.out-81');
+    console.log(a);
+    // a.innerHTML = document.querySelector('.i-81').value;
 }
-
 document.querySelector('.b-8').onclick = f8;
+document.querySelector('.b-81').onclick = f81;
+
 
 // Task 9
 //Создайте один input(radio).r-9  и button.b-9 - при нажатии на button если radio.r-9 выбран (активен, checked) выводите в .out-9 - value прописанное в r-9, либо 0 если не активен. 
