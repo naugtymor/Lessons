@@ -127,8 +127,17 @@ document.querySelector('.b-6').onclick = t6;
 //     4 3 2 1 0
 // Задача решается с помощью цикла.
 
-function t7() {
+let out7 = document.querySelector('.out-7');
+let inp7 = document.querySelector('.i-7');
 
+
+function t7() {
+    let mas = '';
+    for (let i = inp7.value; i >= 0; i--) {
+        mas += i + ' ';
+        if (i == 0) break;
+    }
+    out7.innerHTML = mas;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -142,8 +151,17 @@ document.querySelector('.b-7').onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла.
 
-function t8() {
+let out8 = document.querySelector('.out-8');
+let inp81 = document.querySelector('.i-81');
+let inp82 = document.querySelector('.i-82');
 
+
+function t8() {
+    let mas = '';
+    for (let i = inp81.value; i <= inp82.value; i++) {
+        mas += i + ' ';
+    }
+    out8.innerHTML = mas;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -159,8 +177,23 @@ document.querySelector('.b-8').onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
 
-function t9() {
+let out9 = document.querySelector('.out-9');
+let inp91 = document.querySelector('.i-91');
+let inp92 = document.querySelector('.i-92');
 
+function t9() {
+    let mas = '';
+    if (inp91.value < inp92.value) {
+        for (let i = inp91.value; i <= inp92.value; i++) {
+            mas += i + ' ';
+        }
+    }
+    else {
+        for (let i = inp92.value; i <= inp91.value; i++) {
+            mas += i + ' ';
+        }
+    }
+    out9.innerHTML = mas;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -170,8 +203,17 @@ document.querySelector('.b-9').onclick = t9;
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {
+let out10 = document.querySelector('.out-10');
 
+
+function t10() {
+    let mas = '';
+    for (let i = 1950; i <= 2000; i++) {
+        if (i % 2 == 0) {
+            mas += i + ' ';
+        }
+    }
+    out10.innerHTML = mas;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -184,11 +226,16 @@ document.querySelector('.b-10').onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
+let out11 = document.querySelector('.out-11');
+let divs11 = document.getElementsByClassName('div-11');
 
 function t11() {
-
+    let mas = '';
+    for (let i = 0; i < divs11.length; i++) {
+        mas += divs11[i].textContent + ' ';
+    }
+    out11.innerHTML = mas;
 }
-
 document.querySelector('.b-11').onclick = t11;
 
 //  Task 12
@@ -197,9 +244,13 @@ document.querySelector('.b-11').onclick = t11;
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
+let divs12 = document.getElementsByClassName('div-12');
+console.log(divs12.length);
 
 function t12() {
-
+    for (let i = 0; i < divs12.length; i++) {
+        divs12[i].style.background = 'orange';
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
