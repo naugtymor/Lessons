@@ -245,7 +245,6 @@ document.querySelector('.b-11').onclick = t11;
 // применить к каждому elem[i].style.background = ‘orange’
 
 let divs12 = document.getElementsByClassName('div-12');
-console.log(divs12.length);
 
 function t12() {
     for (let i = 0; i < divs12.length; i++) {
@@ -261,8 +260,12 @@ document.querySelector('.b-12').onclick = t12;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
-function t13() {
+let inps13 = document.getElementsByClassName('i-13');
 
+function t13() {
+    for (let i = 0; i < inps13.length; i++) {
+        inps13[i].value = i + 1;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -273,9 +276,15 @@ document.querySelector('.b-13').onclick = t13;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
+let inps14 = document.getElementsByClassName('i-14');
+let out14 = document.querySelector('.out-14');
 
 function t14() {
-
+    for (let i = 0; i < inps14.length; i++) {
+        if (inps14[i].checked) {
+            out14.innerHTML = inps14[i].value;
+        }
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -286,8 +295,16 @@ document.querySelector('.b-14').onclick = t14;
 // Для вывода использовать цикл. Разделитель пробел.
 // Подсказка (10 - i) + ' ' + i
 
-function t15() {
+let out15 = document.querySelector('.out-15');
 
+
+function t15() {
+    let mas = '';
+    for (let i = 10; i >= 0; i--) {
+        mas += i + ' ' + (10 - i) + ' ';
+        if (i == 0) break
+    }
+    out15.innerHTML = mas;
 }
 
 document.querySelector('.b-15').onclick = t15;
