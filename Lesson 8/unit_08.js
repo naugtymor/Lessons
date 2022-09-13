@@ -172,8 +172,20 @@ document.querySelector('.b-7').onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла  while.
 
-function t8() {
+let out8 = document.querySelector('.out-8');
+let inp81 = document.querySelector('.i-81');
+let inp82 = document.querySelector('.i-82');
 
+
+function t8() {
+    let k1 = inp81.value;
+    let k2 = inp82.value
+    let mas = '';
+    while (k1 <= k2) {
+        mas += k1 + ' ';
+        k1++;
+    }
+    out8.innerHTML = mas;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -188,8 +200,27 @@ document.querySelector('.b-8').onclick = t8;
 // 6 7 8
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл  while.
 
-function t9() {
+let out9 = document.querySelector('.out-9');
+let inp91 = document.querySelector('.i-91');
+let inp92 = document.querySelector('.i-92');
 
+function t9() {
+    let k1 = inp91.value;
+    let k2 = inp92.value
+    let mas = '';
+    if (k2 > k1) {
+        while (k1 <= k2) {
+            mas += k1 + ' ';
+            k1++;
+        }
+    }
+    else {
+        while (k2 <= k1) {
+            mas += k2 + ' ';
+            k2++;
+        }
+    }
+    out9.innerHTML = mas;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -199,8 +230,16 @@ document.querySelector('.b-9').onclick = t9;
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {
+let out10 = document.querySelector('.out-10');
 
+function t10() {
+    let mas = '';
+    let k = 1950;
+    while (k <= 2000) {
+        mas += k + ' ';
+        k = k + 2;
+    }
+    out10.innerHTML = mas;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -213,9 +252,18 @@ document.querySelector('.b-10').onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
+let out11 = document.querySelector('.out-11');
+let div11 = document.querySelectorAll('.div-11');
 
+console.log(div11)
 function t11() {
-
+    let mas = '';
+    let k = 0;
+    while (k < div11.length) {
+        mas += div11[k].textContent + ' ';
+        k++;
+    }
+    out11.innerHTML = mas;
 }
 
 document.querySelector('.b-11').onclick = t11;
