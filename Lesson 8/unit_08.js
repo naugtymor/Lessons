@@ -255,7 +255,6 @@ document.querySelector('.b-10').onclick = t10;
 let out11 = document.querySelector('.out-11');
 let div11 = document.querySelectorAll('.div-11');
 
-console.log(div11)
 function t11() {
     let mas = '';
     let k = 0;
@@ -274,9 +273,14 @@ document.querySelector('.b-11').onclick = t11;
 // перебрать их с помощью цикла  while. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
+let div12 = document.querySelectorAll('.div-12');
 
 function t12() {
-
+    let k = 0;
+    while (k < div12.length) {
+        div12[k].style.background = 'orange';
+        k++;
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -287,7 +291,15 @@ document.querySelector('.b-12').onclick = t12;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
+let inp13 = document.querySelectorAll('.i-13');
+console.log(inp13)
+
 function t13() {
+    let k = 0;
+    while (k < inp13.length) {
+        inp13[k].value = k + 1;
+        k++;
+    }
 
 }
 
@@ -299,9 +311,19 @@ document.querySelector('.b-13').onclick = t13;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
+let inp14 = document.querySelectorAll('.i-14');
+let out14 = document.querySelector('.out-14');
 
 function t14() {
-
+    let mas = '';
+    let k = 0;
+    while (k < inp14.length) {
+        if (inp14[k].checked) {
+            mas = inp14[k].value;
+        }
+        k++;
+    }
+    out14.innerHTML = mas;
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -311,8 +333,19 @@ document.querySelector('.b-14').onclick = t14;
 // 10 0 9 1 8 2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10
 // Для вывода использовать цикл  while. Разделитель пробел.
 
-function t15() {
+let out15 = document.querySelector('.out-15');
 
+
+function t15() {
+    let mas = '';
+    let k = 10;
+
+    while (k >= 0) {
+        mas += k + ' ' + (10 - k) + ' ';
+        k--
+    }
+
+    out15.innerHTML = mas;
 }
 
 document.querySelector('.b-15').onclick = t15;
