@@ -3,9 +3,17 @@
 //     1 2 3 4 5 6 7 8 9 ... 49 50
 // от 1 до 50 включительно. Разделитель - пробел. Задача решается с помощью цикла.
 
+let out1 = document.querySelector('.out-1');
 
 function t1() {
+    let k = 0;
+    let mas = '';
 
+    while (k < 50) {
+        k++;
+        mas += k + ' ';
+    }
+    out1.innerHTML = mas;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -15,8 +23,19 @@ document.querySelector('.b-1').onclick = t1;
 //     2 4 6 ... 122
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла  while.
 
-function t2() {
+let out2 = document.querySelector('.out-2');
 
+
+function t2() {
+    let k = 0;
+    let mas = '';
+    while (k <= 122) {
+        k++;
+        if (k % 2 == 0) {
+            mas += k + ' ';
+        }
+    }
+    out2.innerHTML = mas;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -27,8 +46,17 @@ document.querySelector('.b-2').onclick = t2;
 //     25 24 23 22 . . 7
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла  while.
 
-function t3() {
+let out3 = document.querySelector('.out-3');
 
+function t3() {
+    let k = 25;
+    let mas = '';
+
+    while (k >= 7) {
+        mas += k + ' ';
+        k--;
+    }
+    out3.innerHTML = mas;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -38,8 +66,18 @@ document.querySelector('.b-3').onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла  while.
 
+let out4 = document.querySelector('.out-4');
+
 
 function t4() {
+    let k = 77;
+    let mas = '';
+
+    while (k >= 35) {
+        mas += k + '_';
+        k = k - 3;
+    }
+    out4.innerHTML = mas;
 
 }
 
@@ -51,7 +89,23 @@ document.querySelector('.b-4').onclick = t4;
 //     1_*2_**3_*4_** ... 17_*
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла  while.
 
+let out5 = document.querySelector('.out-5');
+
+
 function t5() {
+    let k = 0;
+    let mas = '';
+
+    while (k < 17) {
+        k++;
+        if (k % 2 == 0) {
+            mas += k + '_**';
+        }
+        else {
+            mas += k + '_*';
+        }
+    }
+    out5.innerHTML = mas;
 
 }
 
@@ -66,8 +120,22 @@ document.querySelector('.b-5').onclick = t5;
 // Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов и символ переноса строки br.
 // Количество строк (итераций, повторений) цикла  while вводит пользователь в i-6.
 
-function t6() {
+let out6 = document.querySelector('.out-6');
+let inp6 = document.querySelector('.i-6');
 
+function t6() {
+    let k = 0;
+    let mas = '';
+    while (k < inp6.value) {
+        k++;
+        let i = 0;
+        while (i <= 6) {
+            mas += '*';
+            i++;
+        }
+        mas += '<br>';
+    }
+    out6.innerHTML = mas;
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -80,8 +148,17 @@ document.querySelector('.b-6').onclick = t6;
 //     4 3 2 1
 // Задача решается с помощью цикла  while.
 
-function t7() {
+let out7 = document.querySelector('.out-7');
+let inp7 = document.querySelector('.i-7');
 
+function t7() {
+    let k = inp7.value;
+    let mas = '';
+    while (k >= 0) {
+        mas += k + ' ';
+        k--;
+    }
+    out7.innerHTML = mas;
 }
 
 document.querySelector('.b-7').onclick = t7;
