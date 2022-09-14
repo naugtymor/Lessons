@@ -1,9 +1,11 @@
 //  Task 1
 // Добавьте кнопку .b-1, которая запускает функцию f1. Функция присваивает блоку .out-1 ширину 200px, высоту 40px.
 
+let out1 = document.querySelector('.out-1');
 
 function f1() {
-
+    out1.style.width = '200px';
+    out1.style.paddingBottom = '40px';
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -11,8 +13,11 @@ document.querySelector('.b-1').onclick = f1;
 //  Task 2
 // По нажатию кнопки b-2 запускайте функцию f2, которая присваивает блоку out-2 класс .bg-2.
 
-function f2() {
+let out2 = document.querySelector('.out-2');
 
+
+function f2() {
+    out2.classList.add('bg-2');
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -21,8 +26,11 @@ document.querySelector('.b-2').onclick = f2;
 //  Task 3
 // По нажатию кнопки b-3 запускайте функцию f3, которая удаляет у блока out-3 класс .bg-3.
 
-function f3() {
+let out3 = document.querySelector('.out-3');
 
+
+function f3() {
+    out3.classList.remove('bg-3');
 }
 
 document.querySelector('.b-3').onclick = f3;
