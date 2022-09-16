@@ -150,9 +150,11 @@ document.querySelector('.b-8').onclick = f8;
 // Вывод - по нажатию кнопки b-9
 // Вывод в out-9
 
-let ar9 = [100, 200, 300, 400, 700, 121];
+let arr9 = [100, 200, 300, 400, 700, 121];
+let out9 = document.querySelector('.out-9');
 
 function f9() {
+    out9.innerHTML = arr9[arr9.length - 1];
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -163,9 +165,13 @@ document.querySelector('.b-9').onclick = f9;
 // Вывод - по нажатию кнопки b-10
 // Вывод в out-10
 
-let ar10 = [100, 200, 300, 400, 700, 121];
+let arr10 = [100, 200, 300, 400, 700, 121];
+let out10 = document.querySelector('.out-10');
 
 function f10() {
+    sum = 0;
+    sum = arr10[1] + arr10[arr10.length - 1];
+    out10.innerHTML = sum;
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -178,10 +184,19 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод - по нажатию кнопки b-11
 // Вывод в out-11
 
-let ar11 = [2, 3, 4, 5, 6, 7];
+let arr11 = [2, 3, 4, 5, 6, 7];
+let out11 = document.querySelector('.out-11');
 
 function f11() {
+    let out = '';
+    let temp = arr11[2];
+    arr11[2] = arr11[4];
+    arr11[4] = temp;
 
+    for (let i = 0; i < arr11.length; i++) {
+        out += arr11[i] + ' ';
+    }
+    out11.innerHTML = out;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -193,10 +208,19 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод - по нажатию кнопки b-12
 // Вывод в out-12
 
-let ar12 = ['test', 'west', 'list', 'class', 'best'];
+let arr12 = ['test', 'west', 'list', 'class', 'best'];
+let out12 = document.querySelector('.out-12');
 
 function f12() {
+    let out = '';
+    let temp = arr12[0];
+    arr12[0] = arr12[arr12.length - 1];
+    arr12[arr12.length - 1] = temp;
 
+    for (let i = 0; i < arr12.length; i++) {
+        out += arr12[i] + ' ';
+    }
+    out12.innerHTML = out;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -210,10 +234,16 @@ document.querySelector('.b-12').onclick = f12;
 //  0 1 1 2 2 3
 
 
-let ar13 = ['test', 'west', 'list', 'class', 'best'];
+let arr13 = ['test', 'west', 'list', 'class', 'best'];
+let out13 = document.querySelector('.out-13');
 
 function f13() {
+    let out = '';
 
+    for (let i = 0; i < arr13.length; i++) {
+        out += i + ' ' + arr13[i] + ' ';
+    }
+    out13.innerHTML = out;
 }
 
 document.querySelector('.b-13').onclick = f13;
