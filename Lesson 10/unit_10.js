@@ -1,10 +1,11 @@
 // Task 1
 //Создайте массив ar1 содержащий строки, числа, булевы значения. Выведите его в .out-1. Вывод - по нажатию кнопки b-1
 
-// let ar1 = // переменную обьявляем здесь!!!!
+let out1 = document.querySelector('.out-1');
+let arr1 = [1, 10, 'nikita', 10 > 9];
 
 function f1() {
-    //ваш_элемент.innerHTML = ar1; // да так можно выводить!!!!
+    out1.innerHTML = arr1; // да так можно выводить!!!!
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,14 +13,14 @@ document.querySelector('.b-1').onclick = f1;
 // Task 2
 //Создайте массив ar2 содержащий строки, числа, булевы значения. Выведите его в div.out-2. Используйте шаблон вывода из кода в JS. Вывод - по нажатию кнопки b-2
 
-// let ar2 = // переменную обьявляем здесь!!!!
+let arr2 = [22, 34, 'programming', 4 < 1]
 
 function f2() {
-    // let out = '';
-    // for (let i = 0; i < ar2.length; i++) {
-    //     out +=arr2[i]+' ';
-    // }
-    // document.querySelector('.out-2').innerHTML = out;
+    let out = '';
+    for (let i = 0; i < arr2.length; i++) {
+        out += arr2[i] + ' ';
+    }
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -30,9 +31,10 @@ document.querySelector('.b-2').onclick = f2;
 // Вывод в out-3
 // Тест допустим массив [1,2,3] вывод - 3
 
-// let ar3 =  // переменную обьявляем здесь!!!!
+let arr3 = [1, 4, 56, 6, 4]; // переменную обьявляем здесь!!!!
 
 function f3() {
+    document.querySelector('.out-3').innerHTML = arr3.length;
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -44,9 +46,11 @@ document.querySelector('.b-3').onclick = f3;
 // Вывод в out-4
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 1 4 9
 
-// let ar4 =  // переменную обьявляем эту здесь!!!!
+let arr4 = [12, 22, 4, 5, 3, 2, 54, 53, 6];// переменную обьявляем эту здесь!!!!
 
 function f4() {
+    let out = document.querySelector('.out-4');
+    out.innerHTML = arr4[0] + ' ' + arr4[3] + ' ' + arr4[8];
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -58,9 +62,17 @@ document.querySelector('.b-4').onclick = f4;
 // Вывод в out-5
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 8
 
-// let ar5 =
+let arr5 = [1, 2, 3, 4, 5, 6, 7, 8];
 
 function f5() {
+    let out = document.querySelector('.out-5');
+    let sum = 0;
+
+    sum += arr5[0];
+    sum += arr5[2];
+    sum += arr5[3];
+
+    out.innerHTML = sum;
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -71,9 +83,15 @@ document.querySelector('.b-5').onclick = f5;
 // Вывод - по нажатию кнопки b-6
 // Вывод в out-6
 
-// let ar6 =
+let arr6 = ['Nikita', 'scales', 30, 'september'];
+let div6 = document.querySelector('.out-6');
 
 function f6() {
+    let out = '';
+    for (let i = 0; i < arr6.length; i++) {
+        out += arr6[i] + ' ';
+    }
+    div6.innerHTML = out;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -84,9 +102,20 @@ document.querySelector('.b-6').onclick = f6;
 // Вывод - по нажатию кнопки b-7
 // Вывод в out-7
 
-let ar7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
+let arr7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
+let out7 = document.querySelector('.out-7');
 
 function f7() {
+    arr7[7] = 'vietnam';
+    arr7[6] = 'turkey';
+    arr7[5] = 'italy';
+
+    let out = '';
+    for (let i = 0; i < arr7.length; i++) {
+        out += arr7[i] + ' ';
+    }
+    out7.innerHTML = out;
+
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -98,11 +127,21 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод - по нажатию кнопки b-8
 // Вывод в out-8
 
-let ar8 = [];
+let arr8 = [];
+let out8 = document.querySelector('.out-8');
 
 function f8() {
-}
+    arr8[3] = 3.14;
+    arr8[4] = 17;
+    arr8[6] = 5;
 
+    let out = '';
+    for (let i = 0; i < arr8.length; i++) {
+        out += arr8[i] + '-';
+    }
+    out8.innerHTML = out;
+    document.querySelector('.out-8-1').innerHTML = arr8.length;
+}
 document.querySelector('.b-8').onclick = f8;
 
 // Task 9
