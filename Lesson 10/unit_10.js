@@ -338,9 +338,16 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод в out-17
 
 let arr17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+let out17 = document.querySelector('.out-17');
 
 function f17() {
-
+    let val = 0;
+    for (let i = 0; i < arr17.length; i++) {
+        if (arr17[i] > 3) {
+            val++;
+        }
+    }
+    out17.innerHTML = val;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -352,9 +359,18 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод - по нажатию кнопки b-18
 // Вывод в out-18
 
-let arr18 = [15, 24, 13, 78, 21, 4, 45, 67];
+let arr18 = [15, 24, 13, 78, 21, 115, 45, 67];
+let out18 = document.querySelector('.out-18');
+
 
 function f18() {
+    let max = arr18[0];
+    for (let i = 0; i < arr18.length; i++) {
+        if (max < arr18[i]) {
+            max = arr18[i];
+        }
+    }
+    out18.innerHTML = max;
 
 }
 
@@ -367,10 +383,17 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод - по нажатию кнопки b-19
 // Вывод в out-19
 
-let arr19 = [15, 424, 313, 78, 241, 4, 45, 67];
+let arr19 = [15, 424, 1, 78, 241, 4, 45, 67];
+let out19 = document.querySelector('.out-19');
 
 function f19() {
-
+    let min = arr19[0];
+    for (let i = 0; i < arr19.length; i++) {
+        if (min > arr19[i]) {
+            min = arr19[i];
+        }
+    }
+    out19.innerHTML = min;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -382,9 +405,15 @@ document.querySelector('.b-19').onclick = f19;
 // Вывод в out-20
 
 let arr20 = [4, 5, 6, 7, 8, 9, 10];
+let out20 = document.querySelector('.out-20');
+
 
 function f20() {
-
+    sum = 0;
+    for (let i = 0; i < arr20.length; i++) {
+        sum += arr20[i];
+    }
+    out20.innerHTML = sum;
 }
 
 document.querySelector('.b-20').onclick = f20;
