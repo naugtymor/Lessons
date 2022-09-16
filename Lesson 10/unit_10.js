@@ -255,10 +255,16 @@ document.querySelector('.b-13').onclick = f13;
 // Вывод - по нажатию кнопки b-14
 // Вывод в out-14
 
-let ar14 = [1, 2, 3, 'hello', 66];
+let arr14 = [1, 2, 3, 'hello', 66];
+let out14 = document.querySelector('.out-14');
 
 function f14() {
+    let out = '';
 
+    for (let i = arr14.length - 1; i >= 0; i--) {
+        out += arr14[i] + ' ';
+    }
+    out14.innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -269,9 +275,19 @@ document.querySelector('.b-14').onclick = f14;
 // Вывод - по нажатию кнопки b-15
 // Вывод в out-15
 
-let ar15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+let arr15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+let out15 = document.querySelector('.out-15');
+
 
 function f15() {
+    let out = '';
+
+    for (let i = 0; i < arr15.length; i++) {
+        if (arr15[i] > 0) {
+            out += arr15[i] + ' ';
+        }
+    }
+    out15.innerHTML = out;
 
 }
 
@@ -283,12 +299,34 @@ document.querySelector('.b-15').onclick = f15;
 // Вывод - по нажатию кнопки b-16
 // Вывод в out-16
 
-let ar16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
-let ar16_odd = [];
-let ar16_even = [];
+let arr16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+let arr16_odd = [];
+let arr16_even = [];
+let out16_1 = document.querySelector('.out-16-odd');
+let out16_2 = document.querySelector('.out-16-even');
+
 
 function f16() {
+    let k1 = 0;
+    let k2 = 0;
 
+    for (let i = 0; i < arr16.length; i++) {
+        if (arr16[i] % 2 == 0) {
+            arr16_even[k1] = arr16[i];
+            k1++;
+        }
+        else {
+            arr16_odd[k2] = arr16[i];
+            k2++;
+        }
+    }
+
+    for (let i = 0; i < arr16_odd.length; i++) {
+        out16_1.innerHTML += arr16_odd[i] + ' ';
+    }
+    for (let i = 0; i < arr16_even.length; i++) {
+        out16_2.innerHTML += arr16_even[i] + ' ';
+    }
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -299,7 +337,7 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод - по нажатию кнопки b-17
 // Вывод в out-17
 
-let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+let arr17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
 
@@ -314,7 +352,7 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод - по нажатию кнопки b-18
 // Вывод в out-18
 
-let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
+let arr18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
 
@@ -329,7 +367,7 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод - по нажатию кнопки b-19
 // Вывод в out-19
 
-let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
+let arr19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
 
@@ -343,7 +381,7 @@ document.querySelector('.b-19').onclick = f19;
 // Вывод - по нажатию кнопки b-20
 // Вывод в out-20
 
-let ar20 = [4, 5, 6, 7, 8, 9, 10];
+let arr20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
 
