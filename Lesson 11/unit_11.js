@@ -91,12 +91,12 @@ function f7() {
     for (let i = 0; i < d7.length - 1; i++) {
         temp[i] = d7[i];
     }
+
     d7 = []
 
     for (let i = 0; i < temp.length; i++) {
         d7[i] = temp[i];
     }
-    console.log(temp);
     showArr('.out-7', d7);
 }
 
@@ -109,8 +109,21 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let d8 = [2, '4', 12, 67, 'hello'];
+let inp8 = document.querySelector('.i-8');
 
 function f8() {
+    let temp = [];
+
+    for (let i = 0; i < d8.length; i++) {
+        temp[i + 1] = d8[i];
+    }
+
+    temp[0] = inp8.value;
+    d8 = [];
+
+    for (let i = 0; i < temp.length; i++) {
+        d8[i] = temp[i];
+    }
 
     showArr('.out-8', d8);
 }
@@ -126,6 +139,17 @@ document.querySelector('.b-8').onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
+    let temp = [];
+
+    for (let i = 0; i < d9.length - 1; i++) {
+        temp[i] = d9[i + 1];
+    }
+
+    d9 = [];
+
+    for (let i = 0; i < temp.length; i++) {
+        d9[i] = temp[i];
+    }
 
     showArr('.out-9', d9);
 }
@@ -141,7 +165,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-
+    d10.reverse();
     showArr('.out-10', d10);
 }
 
@@ -155,9 +179,11 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод в out-11
 
 let d11 = [2, 3, 4, 5, 6, 7];
+let inp11 = document.querySelector('.i-11');
 
 function f11() {
-
+    let inof = Number(inp11.value);
+    document.querySelector('.out-11').innerHTML = d11.indexOf(inof);
 }
 
 document.querySelector('.b-11').onclick = f11;
