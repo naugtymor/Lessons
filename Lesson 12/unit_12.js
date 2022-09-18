@@ -140,7 +140,12 @@ function f9() {
         [21, -34, -43],
         [44, -56]
     ];
-
+    for (let i = 0; i < a9.length; i++) {
+        for (let k = 0; k < a9[i].length; k++) {
+            if (a9[i][k] > 0) out += a9[i][k] + ' ';
+        }
+    }
+    document.querySelector('.out-9').innerHTML = out;
 
 }
 
@@ -158,6 +163,12 @@ function f10() {
         ['st', 21, -34, -43],
         [44, -56, 'task']
     ];
+    for (let i = 0; i < a10.length; i++) {
+        for (let k = 0; k < a10[i].length; k++) {
+            if (typeof (a10[i][k]) === 'string') out += a10[i][k] + ' ';
+        }
+    }
+    document.querySelector('.out-10').innerHTML = out;
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -174,6 +185,12 @@ let a11 = [
 
 function f11() {
     let out = '';
+    for (let i = 0; i < a11.length; i++) {
+        for (let k = a11[i].length - 1; k >= 0; k--) {
+            out += a11[i][k] + ' ';
+        }
+    }
+    document.querySelector('.out-11').innerHTML = out;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -182,6 +199,8 @@ document.querySelector('.b-11').onclick = f11;
 // Дан массив a12 который моделирует шахматную доску. Используя цикл выведите в out-12 единицы из этого массива. Все действия в функции f12. Функция запускается при нажатии на b12. Вывод через пробел.
 
 function f12() {
+    let out = '';
+
     let a12 = [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 1, 0, 1, 0, 1, 0],
@@ -192,6 +211,13 @@ function f12() {
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 1, 0, 1, 0, 1, 0],
     ];
+    for (let i = 0; i < a12.length; i++) {
+        for (let k = 0; k < a12[i].length; k++) {
+            if (a12[i][k] = 1) out += a12[i][k] + ' ';
+        }
+        out += '<br>';
+    }
+    document.querySelector('.out-12').innerHTML = out;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -202,9 +228,25 @@ document.querySelector('.b-12').onclick = f12;
 let a13 = [];
 
 function f13() {
+    for (let i = 0; i < 8; i++) {
+        a13[i] = [];
+        if (i % 2 == 0) {
+            for (let k = 0; k < 8; k++) {
+                if (k % 2 == 0) a13[i][k] = 0;
+                else a13[i][k] = 1;
+            }
+        }
+        else {
+            for (let k = 0; k < 8; k++) {
+                if (k % 2 == 0) a13[i][k] = 1;
+                else a13[i][k] = 0;
+            }
+        }
 
+    }
+    console.log(a13);
 }
-
+console.log(a13);
 document.querySelector('.b-13').onclick = f13;
 
 // Task 14
@@ -220,7 +262,13 @@ let a14 = [
 ];
 
 function f14() {
+    let out = '';
 
+
+    for (let i = 0; i < a14.length; i++) {
+        out += a14[i].length + ' ';
+    }
+    document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -231,13 +279,21 @@ document.querySelector('.b-14').onclick = f14;
 
 let a15 = [
     [],
-    [1, 0],
+    [1, 0, 3, 4, 5, 3, 32, 5],
     [1, 0, 0, 0],
     [3, 4, 5, 6, 7, 8],
     [1, 2]
 ];
 
 function f15() {
+    let out = '';
+    let max = 0;
+    for (let i = 0; i < a14.length; i++) {
+        if (a15[i].length > max) {
+            max = a15[i].length;
+        }
+    }
+    document.querySelector('.out-15').innerHTML = max;
 
 }
 
@@ -267,13 +323,17 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a17 = [
+    [0, 5, 6],
+    [1, 7, 7, 6],
+    [3],
+    [2, 5, 8, 5]
 
 ];
 
 console.group('Task 17 ================');
-// console.log(a17[3][2] == 8);
-// console.log(a17[1][1] == 7);
-// console.log(a17[0][2] == 6);
+console.log(a17[3][2] == 8);
+console.log(a17[1][1] == 7);
+console.log(a17[0][2] == 6);
 
 console.groupEnd();
 
