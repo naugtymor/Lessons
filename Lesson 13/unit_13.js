@@ -459,10 +459,13 @@ function f19() {
     let i19 = document.querySelector(".i-19").value;
 
     for (let key in a19) {
-        if (key == i19.toLowerCase()) {
-            out = 1;
-        } else {
-            out = "";
+        for (let i = 0; i < a19[key].length; i++) {
+            if (a19[key] == i19) {
+                out = key;
+                break;
+            } else {
+                out = "";
+            }
         }
     }
     document.querySelector('.out-19').innerHTML = out;
