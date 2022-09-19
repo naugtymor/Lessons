@@ -231,6 +231,11 @@ let a11 = {
 };
 
 function f11() {
+    let i11 = document.querySelector('.i-11').value;
+
+    delete a11[i11];
+
+    f5(a11, '.out-11');
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -247,6 +252,15 @@ let a12 = {
 };
 
 function f12() {
+    let i12 = document.querySelector('.i-12').value;
+
+    for (let key in a12) {
+        if (a12[key] == i12) {
+            delete a12[key];
+        }
+    }
+
+    f5(a12, '.out-12');
 
 }
 
@@ -263,7 +277,14 @@ let a13 = {
 };
 
 function f13() {
+    let sum = 0;
 
+    for (let key in a13) {
+        if (typeof (a13[key]) == 'number') {
+            sum += a13[key];
+        }
+    }
+    document.querySelector('.out-13').innerHTML = sum;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -280,7 +301,13 @@ let a14 = {
 };
 
 function f14() {
+    let out = '';
 
+    for (let key in a14) {
+        out += a14[key][0] + ' ';
+    }
+
+    document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -298,7 +325,14 @@ let a15 = {
 };
 
 function f15() {
+    let out = '';
 
+    for (let key in a15) {
+        for (let i = 0; i < a15[key].length; i++) {
+            out += a15[key][i] + ' ';
+        }
+    }
+    document.querySelector('.out-15').innerHTML = out;
 }
 
 document.querySelector('.b-15').onclick = f15;
