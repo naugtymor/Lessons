@@ -116,7 +116,11 @@ let a6 = {
 };
 
 function f6() {
+    let i61 = document.querySelector('.i-61').value;
+    let i62 = document.querySelector('.i-62').value;
 
+    a6[i61] = i62;
+    f5(a6, '.out-6');
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -131,7 +135,16 @@ let a7 = {
 
 
 function f7() {
-
+    let i7 = document.querySelector('.i-7').value;
+    for (let key in a7) {
+        if (key == i7) {
+            document.querySelector('.out-7').innerHTML = 1;
+            break;
+        }
+        else {
+            document.querySelector('.out-7').innerHTML = 0;
+        }
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -145,7 +158,17 @@ let a8 = {
 };
 
 function f8() {
+    let i8 = document.querySelector('.i-8').value;
 
+    for (let key in a8) {
+        if (key == i8) {
+            document.querySelector('.out-8').innerHTML = key;
+            break;
+        }
+        else {
+            document.querySelector('.out-8').innerHTML = 0;
+        }
+    }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -162,7 +185,14 @@ let a9 = {
 };
 
 function f9() {
-
+    let i9 = document.querySelector('.i-9').value;
+    let out = '';
+    for (let key in a9) {
+        if (a9[key] == i9) {
+            out += key + ' ';
+        }
+    }
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -171,9 +201,12 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
-
-    //return true;
-    //return false;
+    for (let key in arr) {
+        if (arr[key] == val) {
+            return true;
+        }
+        else return false;
+    }
 }
 
 document.querySelector('.b-10').onclick = () => {
