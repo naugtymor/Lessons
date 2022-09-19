@@ -356,6 +356,17 @@ let a16 = {
 }
 
 function f16() {
+    let out = '';
+
+    for (let key1 in a16) {
+        for (let key2 in a16[key1]) {
+            out += a16[key1][key2] + ' ';
+            break
+        }
+        document.querySelector('.out-16').innerHTML = out;
+
+    }
+    document.querySelector('.out-16').innerHTML = out;
 
 }
 
@@ -381,6 +392,19 @@ let a17 = {
 }
 
 function f17() {
+    let out = '';
+
+    for (let key1 in a16) {
+        for (let key2 in a16[key1]) {
+            if (a16[key1].age > 30) {
+                out += a16[key1][key2] + ' ';
+                break;
+            }
+        }
+        document.querySelector('.out-17').innerHTML = out;
+
+    }
+    document.querySelector('.out-17').innerHTML = out;
 
 }
 
@@ -396,8 +420,29 @@ let a18 = {
 }
 
 function f18() {
+    let out = '';
+    let i18 = document.querySelector('.i-18').value;
+
+    for (let key in a18) {
+        for (let i = 0; i < a18[key].length; i++) {
+            out += a18[i18][i] + ' ';
+        }
+        break;
+    }
+    document.querySelector('.out-18').innerHTML = out;
+
 
 }
+
+document.querySelector('.b-18').onclick = f18;
+
+
+// if (a18[key] = i18) {
+//     out += a18[key][i] + ' ';
+// }
+// else {
+//     out += '';
+// }
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -410,9 +455,18 @@ let a19 = {
 }
 
 function f19() {
+    let out;
+    let i19 = document.querySelector(".i-19").value;
 
+    for (let key in a19) {
+        if (key == i19.toLowerCase()) {
+            out = 1;
+        } else {
+            out = "";
+        }
+    }
+    document.querySelector('.out-19').innerHTML = out;
 }
-
 document.querySelector('.b-19').onclick = f19;
 
 // Task 20
