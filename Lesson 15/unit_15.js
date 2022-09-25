@@ -204,3 +204,4 @@ const f13 = () => {
 document.querySelector('.b-13').onclick = () => {
     console.log(f13());
 }
+//hi nikita
