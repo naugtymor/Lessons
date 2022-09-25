@@ -167,7 +167,7 @@ document.querySelector('.b-11').onclick = f11;
 let str12 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
 const f12 = () => {
-
+    return new Set(str12);
 }
 
 document.querySelector('.b-12').onclick = () => {
@@ -180,11 +180,25 @@ document.querySelector('.b-12').onclick = () => {
 // { "H" : 1, 'e' : 1, 'l' : 2, "o" : 2, " ": 1}
 
 let str13 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
+let arr13 = str13.split('')
+let s13 = new Set(arr13);
+console.log(s13);
 
 
 const f13 = () => {
+    let amount = 0;
+    let out = '';
+    for (let item of s13) {
+        amount = 0;
+        for (let i = 0; i < arr13.length; i++) {
+            if (item == arr13[i]) {
+                amount = amount + 1;
+            }
+        }
+        out += `"${item}": ${amount}, `;
+    }
 
-    // return
+    return out;
 }
 
 document.querySelector('.b-13').onclick = () => {
