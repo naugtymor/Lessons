@@ -1,3 +1,6 @@
+let select = document.querySelector('.s-17');
+
+
 fetch('http://api.openweathermap.org/data/2.5/weather?id=625144&appid=8cefcfa11cb6ceb8c8de725ea1050348')
     .then(function (resp) { return resp.json() })
     .then(function (data) {
