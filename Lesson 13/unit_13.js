@@ -453,22 +453,26 @@ let a19 = {
     "blue": ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
-
 function f19() {
-    let out;
+    let out = '';
     let i19 = document.querySelector(".i-19").value;
 
     for (let key in a19) {
         for (let i = 0; i < a19[key].length; i++) {
-            if (a19[key] == i19) {
+            // debugger
+            if (a19[key][i].toLowerCase() == i19.toLowerCase()) {
                 out = key;
                 break;
-            } else {
-                out = "";
             }
+            // else {
+            //     out = "";
+            // }
+
         }
     }
+
     document.querySelector('.out-19').innerHTML = out;
+
 }
 document.querySelector('.b-19').onclick = f19;
 
@@ -482,6 +486,18 @@ let a20 = {
 }
 
 function f20() {
+    let out = '';
+
+    for (let key in a20) {
+        for (let i = 0; i < a20[key].length; i++) {
+            if (a20[key][i][1] == 2) {
+                out += a20[key][i][0] + ', ';
+            }
+
+        }
+    }
+
+    document.querySelector('.out-20').innerHTML = out;
 
 }
 
