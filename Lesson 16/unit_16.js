@@ -48,7 +48,7 @@ document.querySelector('.b-3').addEventListener('click', f3);
 //При нажатии .b-4 выполняете функцию f4. Функция получает div.out-4 со страницы с помощью querySelectorAll и в каждый дописывает число 4.
 
 let outs4 = document.querySelectorAll('.out-4');
-console.log(outs4)
+// console.log(outs4)
 
 function f4() {
     for (let i = 0; i < outs4.length; i++) {
@@ -83,7 +83,15 @@ document.querySelector('.b-5').addEventListener('click', () => {
 let a6 = [[1, 2], [3, 4], [5, 6]];
 
 function f6() {
-
+    let temp = [];
+    for (let i = 0; i < a6.length; i++) {
+        for (let k = 0; k < a6[i].length; k++) {
+            temp.push(a6[i][k])
+        }
+    }
+    a6 = temp;
+    console.log(a6)
+    document.querySelector('.out-6').innerHTML = a6;
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
@@ -91,10 +99,22 @@ document.querySelector('.b-6').addEventListener('click', f6);
 // Task 7
 //При нажатии .b-7 выполняете функцию f7. Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}. Функция должна возвращать результирующий массив.
 
-let a7 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
+let a7 = [
+    { id: 23, name: 'Ivan' },
+    { id: 45, name: 'Petr' }
+];
+
+// console.log(a7)
 
 function f7() {
+    let temp = {};
 
+    for (let i = 0; i < a7.length; i++) {
+        const a = a7[i].id;
+        const b = a7[i].name;
+        temp[a] = b;
+    }
+    return temp;
 }
 
 document.querySelector('.b-7').addEventListener('click', () => {
@@ -108,6 +128,13 @@ document.querySelector('.b-7').addEventListener('click', () => {
 let a8 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
 
 function f8() {
+    let temp = [];
+
+    for (let i = 0; i < a8.length; i++) {
+        const a = a8[i].id;
+        temp[i] = a;
+    }
+    return temp;
 
 }
 
@@ -121,7 +148,16 @@ document.querySelector('.b-8').addEventListener('click', () => {
 let a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
 
 function f9() {
+    let max = 0;
+    for (let i = 0; i < a9.length; i++) {
+        for (let k = 0; k < a9[i].length; k++) {
+            if (a9[i].length - 1 > max) {
+                max = a9[i].length - 1;
+            }
 
+        }
+    }
+    return max;
 }
 
 document.querySelector('.b-9').addEventListener('click', () => {
@@ -134,7 +170,11 @@ document.querySelector('.b-9').addEventListener('click', () => {
 let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
-
+    let temp = {};
+    for (let i = 0; i < a10.length; i++) {
+        temp[a10[i]] = a10[i];
+    }
+    return temp;
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
