@@ -108,7 +108,12 @@ document.querySelector('.b-5').onclick = () => {
 let b6 = [3, 14, 15, 92, "6", "5", "hello", 32];
 
 function t6() {
-
+    let b6_res = b6.filter(item => {
+        if (typeof item == "number") {
+            return item;
+        }
+    })
+    return b6_res;
 }
 
 document.querySelector('.b-6').onclick = () => {
@@ -122,7 +127,12 @@ document.querySelector('.b-6').onclick = () => {
 let b7 = ["php-7", "html", "css", 92, "6", "5", "hello", 32];
 
 function t7() {
-
+    let b7_res = b7.filter(item => {
+        if (item.length > 3) {
+            return true;
+        }
+    })
+    return b7_res;
 }
 
 document.querySelector('.b-7').onclick = () => {
@@ -135,7 +145,12 @@ document.querySelector('.b-7').onclick = () => {
 let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
 
 function t8() {
-
+    let b8_res = b8.filter((item, index) => {
+        if (index % 2 == 0) {
+            return item;
+        }
+    })
+    return b8_res;
 }
 
 document.querySelector('.b-8').onclick = () => {
@@ -150,6 +165,17 @@ document.querySelector('.b-8').onclick = () => {
 let b9 = [3, "hello", 4, "world", 5, "hi"];
 
 function t9() {
+    let b9_num = b9.filter(item => {
+        if (typeof item == "number") {
+            return true;
+        }
+    })
+
+    let b9_string = b9.filter(item => {
+        if (typeof item == "string") {
+            return true;
+        }
+    })
 
     return [b9_num, b9_string];
 }
@@ -166,8 +192,14 @@ document.querySelector('.b-9').onclick = () => {
 let b10 = [[1, 2, 3], [3, 4, 6], [4, 5, 7], [8, 9, 3]]
 
 function t10() {
-
-
+    let b10_res = b10.filter(item => {
+        for (let i = 0; i < item.length; i++) {
+            if (item[i] == 3) {
+                return true;
+            }
+        }
+    })
+    return b10_res;
 }
 
 document.querySelector('.b-10').onclick = () => {
