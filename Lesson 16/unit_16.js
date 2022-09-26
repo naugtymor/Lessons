@@ -192,7 +192,13 @@ let a11 = {
 }
 
 function f11() {
-
+    let out = '';
+    for (let key in a11) {
+        if (a11[key] > 10) {
+            out += a11[key] + ' ';
+        }
+    }
+    document.querySelector('.out-11').innerHTML = out;
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -203,7 +209,13 @@ document.querySelector('.b-11').addEventListener('click', f11);
 let a12 = [4, 5, 6, 7];
 
 function f12() {
+    let out = '';
 
+    for (let item of a12) {
+        out += item + ' ';
+    }
+
+    document.querySelector('.out-12').innerHTML = out;
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -215,7 +227,14 @@ document.querySelector('.b-12').addEventListener('click', f12);
 let a13 = 'testone';
 
 function f13() {
+    let out = '';
+    let arr13 = a13.split('')
 
+    for (let item of arr13) {
+        out += item + ' ';
+    }
+
+    document.querySelector('.out-13').innerHTML = out;
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -226,8 +245,15 @@ document.querySelector('.b-13').addEventListener('click', f13);
 //При нажатии .b-14 выполняете функцию f14. Функция должна c помощью for of перебрать a14 и вывести по элементам в out-14 через пробел.
 
 let a14 = new Set([4, 5, 6]);
+console.log(a14)
 
 function f14() {
+    let out = '';
+
+    for (let item of a14) {
+        out += item + ' ';
+    }
+    document.querySelector('.out-14').innerHTML = out;
 
 }
 
@@ -236,9 +262,13 @@ document.querySelector('.b-14').addEventListener('click', f14);
 // Task 15
 //При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll, затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
 
+let outs15 = document.querySelectorAll('.out-15');
+console.log(outs15)
 
 function f15() {
-
+    for (let item of outs15) {
+        item.innerHTML = 15;
+    }
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
