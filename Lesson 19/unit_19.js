@@ -68,7 +68,7 @@ document.querySelector('.div-4').ondblclick = () => {
 /*  Дан блок .div-5.active. Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
 
 let div5 = document.querySelector('.div-5');
-console.log(div5.className)
+// console.log(div5.className)
 
 function t5() {
     this.classList.toggle('active');
@@ -82,8 +82,10 @@ document.querySelector('.div-5').ondblclick = t5;
 /*  Дан блок .div-6 и список .ul-6. При двойном клике на блоке скрывайте .ul-6 еcли он показан и показывайте если скрыт. Скрытие и показ делайте через добавление - удаление класса .hide */
 
 function t6() {
-
+    document.querySelector('.ul-6').classList.toggle('hide');
 }
+
+document.querySelector('.div-6').ondblclick = t6;
 
 // ваше событие здесь!!!
 
@@ -92,17 +94,34 @@ function t6() {
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
 function t7() {
+    document.querySelector('.div-7').classList.toggle('active');
 
 }
+
+document.querySelector('.div-7').oncontextmenu = t7;
+
 
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
-function t8() {
+let ch8 = document.querySelector('.ch-8');
 
+function t8() {
+    if (ch8.checked) {
+        document.oncontextmenu = () => {
+            return false;
+        }
+    }
+    else {
+        document.oncontextmenu = () => {
+            return true;
+        }
+    }
 }
+
+document.querySelector('.ch-8').onchange = t8;
 
 // ваше событие здесь!!!
 
