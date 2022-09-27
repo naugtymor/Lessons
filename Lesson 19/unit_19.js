@@ -3,15 +3,32 @@
 /* Добавьте на блок .div-1 событие клик и по клику запуск функции t1. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-1.  */
 
 function t1() {
+    document.querySelector('.out-1').innerHTML = document.querySelector('.div-1').textContent;
 }
+
+document.querySelector('.div-1').onclick = t1;
 
 // ваше событие здесь!!!
 
 // Task 2 ============================================
 /*  Добавьте на блок .div-2 событие клик и по клику запуск функции t2. Функция должна возвращать true или false в зависимости от того, нажата ли клавиша alt или нет в момент клика. Также, выводите на экран результат. Вывод осуществляется в out-2. */
 
-function t2() {
+function t2(event) {
+    // console.log(event
+    // console.log(event.altKey);
 
+    if (event.altKey == true) {
+        document.querySelector('.out-2').innerHTML = true;
+        return true;
+    }
+    else {
+        document.querySelector('.out-2').innerHTML = false;
+        return false;
+    }
+}
+
+document.querySelector('.div-2').onclick = () => {
+    console.log(t2(event))
 }
 
 // ваше событие здесь!!!
@@ -23,8 +40,12 @@ function t2() {
 let w3 = 75;
 
 function t3() {
-
+    w3 = w3 + 5;
+    document.querySelector('.div-3').style.width = w3 + 'px';
+    document.querySelector('.out-3').innerHTML = w3;
 }
+
+document.querySelector('.div-3').onclick = t3;
 
 // ваше событие здесь!!!
 
@@ -33,17 +54,27 @@ function t3() {
 /*  Добавьте на блок .div-4 событие двойной клик и по двойному клику запуск функции t4. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-4. */
 
 function t4() {
-
+    let a = document.querySelector('.div-4').textContent;
+    document.querySelector('.out-4').innerHTML = a;
+    return a;
 }
 
+document.querySelector('.div-4').ondblclick = () => {
+    console.log(t4())
+}
 // ваше событие здесь!!!
 
 // Task 5 ============================================
 /*  Дан блок .div-5.active. Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
 
-function t5() {
+let div5 = document.querySelector('.div-5');
+console.log(div5.className)
 
+function t5() {
+    this.classList.toggle('active');
 }
+
+document.querySelector('.div-5').ondblclick = t5;
 
 // ваше событие здесь!!!
 
