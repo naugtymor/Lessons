@@ -176,18 +176,21 @@ document.querySelector('.i-9').onkeydown = t9;
 let a10 = 75;
 let b10 = 64;
 
+let img = document.querySelector('.div-10 img')
+
 function t10(event) {
     if (event.code == "ArrowDown" || event.code == "ArrowUp") {
-        // document.querySelector('.div-10').style.width = a10 + 'px';
-        document.querySelector('.div-10 img').style.height = b10 + 'px';
-        a10++;
+        img.style.height = b10 + 'px';
         b10++;
+    }
+    else if (event.code == "ArrowLeft" || event.code == "ArrowRight") {
+        img.style.width = a10 + 'px';
+        a10++;
     }
 
 }
 
 document.querySelector('.i-10').onkeydown = t10;
-
 
 // ваше событие здесь!!!
 
@@ -199,9 +202,18 @@ document.querySelector('.i-10').onkeydown = t10;
 4. Ограничения проекта – тестируются только указанные клавиши в латинской раскладке. Комбинации клавиш не тестируются. Т.е. нажиматься shift+A, ctrl+shift – не будут. Все символы вводятся в нижнем регистре.
 */
 
-function t11() {
+let keyCollection = document.querySelectorAll('.button');
 
+function t11(event) {
+    console.log(event)
+    keyCollection.forEach((element) => {
+        element.classList.remove('active');
+    });
+
+    document.querySelector(`.b-${event.key}`).classList.add('active');
 }
+
+document.querySelector('.i-11').onkeydown = t11;
 
 // ваше событие здесь!!!
 
