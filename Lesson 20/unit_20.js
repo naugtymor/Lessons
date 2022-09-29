@@ -107,19 +107,45 @@ document.querySelector('.i-6').onkeypress = t6;
 // Task 7 ============================================
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
 
-function t7() {
-    const a7 = [];
+let out7 = document.querySelector('.out-7');
 
+function t7() {
+    const a7 = [1, 'd', 4, 'f', 'Q', 'r', 'O', 76];
+
+    out7.innerHTML = a7[Math.trunc(rand(0, a7.length))]
+
+    function rand(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 }
+
+document.querySelector('.i-7').onkeypress = t7;
 
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
 
-function t8() {
+let out8 = document.querySelector('.out-8');
 
+function t8(event) {
+    const a8 = {
+        i: 1,
+        o: 0,
+        I: 7
+    }
+
+    if (a8[event.key] == undefined) {
+        console.log(1)
+        out8.innerHTML += event.key
+    } else {
+        console.log(0)
+        out8.innerHTML += a8[event.key];
+    }
 }
+
+
+document.querySelector('.i-8').onkeypress = t8;
 
 // ваше событие здесь!!!
 
@@ -127,9 +153,19 @@ function t8() {
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
 
-function t9() {
+let out9 = document.querySelector('.out-9');
+let a = 0;
 
+function t9(event) {
+    console.log(event)
+
+    if (event.code == "ArrowDown") {
+        a++;
+    }
+    out9.innerHTML = a;
 }
+
+document.querySelector('.i-9').onkeydown = t9;
 
 // ваше событие здесь!!!
 
