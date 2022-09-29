@@ -86,6 +86,7 @@ function t6() {
 document.querySelector('.div-7').addEventListener('touchend', t7);
 
 function t7() {
+    this.style.background = 'red';
 
 }
 
@@ -94,8 +95,15 @@ function t7() {
 // Task 8 ============================================
 /*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
 
-function t8() {
+let a8 = ['red', 'green', 'blue', 'orange', 'pink', 'yellow'];
+document.querySelector('.div-8').addEventListener('touchstart', t8);
 
+function rand(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function t8() {
+    this.style.background = a8[Math.round(rand(0, a8.length))];
 }
 
 // ваше событие здесь!!!
@@ -104,8 +112,10 @@ function t8() {
 // Task 9 ============================================
 /* Дан блок div-9. Добавьте событие ontouch. Выводите количество одновременных касаний в out-9. */
 
-function t9() {
+document.querySelector('.div-9').addEventListener('touchstart', t9);
 
+function t9(event) {
+    document.querySelector('.out-9').innerHTML = event.touches.length;
 }
 
 // ваше событие здесь!!!
@@ -114,8 +124,11 @@ function t9() {
 // Task 10 ============================================
 /*  Дан блок div-10. Добавьте на него событие touchmove. При срабатывании события - увеличивайте его ширину на 1. */
 
+document.querySelector('.div-10').addEventListener('touchmove', t10);
+let w10 = 75;
 function t10() {
-
+    this.style.width = w10 + 'px';
+    w10++;
 }
 
 // ваше событие здесь!!!
@@ -123,7 +136,10 @@ function t10() {
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
 
-function t11() {
+document.querySelector('.div-11').addEventListener('touchstart', t11);
+
+function t11(event) {
+    document.querySelector('.out-11').innerHTML = 'X: ' + event.changedTouches[0].clientX + ' ' + 'Y: ' + event.changedTouches[0].clientY;
 
 }
 
@@ -148,12 +164,48 @@ next.onclick = nextFunction;
 const prev = document.querySelectorAll('.prev');
 prev.onclick = prevFunction;
 
-function nextFunction() {
+document.querySelector('.next').addEventListener('touchstart', nextFunction);
+document.querySelector('.prev').addEventListener('touchstart', prevFunction);
+document.querySelector('.reset').addEventListener('touchstart', resetFunction);
 
+let maxImg = document.querySelector('.img-12-max');
+
+// console.log(element)
+
+function nextFunction() {
+    if (count + 1 == images.length) {
+        count = 0;
+    } else {
+        count++;
+    }
+
+    for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove('active-img');
+        images[count].classList.add('active-img');
+        maxImg.src = images[count].src;
+    }
 }
 
 function prevFunction() {
+    if (count == 0) {
+        count = images.length - 1;
+    } else {
+        count--;
+    }
 
+    for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove('active-img');
+        images[count].classList.add('active-img');
+        maxImg.src = images[count].src;
+    }
+
+}
+
+function resetFunction() {
+    images[count].classList.remove('active-img');
+    count = 0;
+    images[count].classList.add('active-img');
+    maxImg.src = images[count].src;
 }
 
 
