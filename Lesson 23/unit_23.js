@@ -3,16 +3,23 @@
 /* Создайте функцию t1 которая записывает  в LS  ключ 5 со значением 11. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-1. */
 
 function t1() {
+    localStorage.setItem('5', 11);
 }
+
+document.querySelector('.b-1').onclick = t1;
 
 // ваше событие здесь!!!
 
 // Task 2 ============================================
 /* Создайте функцию t2 которая записывает  в LS  массив a2 = [7,6,5]. Ключ a2. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-2. */
 
-function t2() {
+let a2 = [7, 6, 5];
 
+function t2() {
+    localStorage.setItem('a2', JSON.stringify(a2));
 }
+
+document.querySelector('.b-2').onclick = t2;
 
 // ваше событие здесь!!!
 
@@ -20,9 +27,17 @@ function t2() {
 // Task 3 ============================================
 /*  При нажатии кнопки t3 выведите из LS сохранненный массив a2. Выведите в out-3 в формате ключ пробел значение перенос строки.  */
 
-function t3() {
+let out = '';
 
+function t3() {
+    // document.querySelector('.out-3').innerHTML = localStorage.getItem('a2')
+    for (let i = 0; i < a2.length; i++) {
+        out += 'a2' + ' ' + JSON.parse(a2[i]) + '<br>';
+    }
+    document.querySelector('.out-3').innerHTML = out;
 }
+
+document.querySelector('.b-3').onclick = t3;
 
 // ваше событие здесь!!!
 
@@ -30,16 +45,29 @@ function t3() {
 // Task 4 ============================================
 /*  Создайте функцию t4 которая записывает  в LS  массив a4 = {hello: world, hi:mahai}. Ключ a4. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-4.*/
 
-function t4() {
+let a4 = {
+    hello: 'world',
+    hi: 'mahai',
+};
 
+function t4() {
+    localStorage.setItem('a4', JSON.stringify(a4));
 }
+
+document.querySelector('.b-4').onclick = t4;
 
 // ваше событие здесь!!!
 
 // Task 5 ============================================
 /*   При нажатии кнопки b-5 выведите из LS сохранненный массив a4. Выведите в out-5 в формате ключ пробел значение перенос строки. */
 
+out = '';
+
 function t5() {
+    for (let key in a4) {
+        out += 'a4' + ' ' + JSON.parse(a4[key]) + '<br>';
+    }
+    document.querySelector('.out-4').innerHTML = out;
 
 }
 
