@@ -4,6 +4,7 @@
 
 function t1() {
     localStorage.setItem('5', 11);
+    console.log(1)
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -61,15 +62,20 @@ document.querySelector('.b-4').onclick = t4;
 // Task 5 ============================================
 /*   При нажатии кнопки b-5 выведите из LS сохранненный массив a4. Выведите в out-5 в формате ключ пробел значение перенос строки. */
 
-out = '';
-
 function t5() {
-    for (let key in a4) {
-        out += 'a4' + ' ' + JSON.parse(a4[key]) + '<br>';
+    // debugger;
+    out = '';
+    a4_res = localStorage.getItem('a4');
+    a4_res = JSON.parse(a4_res);
+    console.log(a4_res)
+    for (let key in a4_res) {
+        out += key + ' ' + a4_res[key] + '<br>';
     }
-    document.querySelector('.out-4').innerHTML = out;
+    document.querySelector('.out-5').innerHTML = out;
 
 }
+
+document.querySelector('.b-5').onclick = t5;
 
 // ваше событие здесь!!!
 
