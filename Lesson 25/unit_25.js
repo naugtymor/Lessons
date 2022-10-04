@@ -4,8 +4,27 @@
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
+    fetch('http://getpost.itgid.info/index2.php', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            // 'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+        body: 'auth=asdflkjnsdfksdjf&action=1' // body data type must match "Content-Type" header
+    })
+
+        .then(data => data.text())
+        .then(data => {
+            console.log(data);
+        })
 }
 
+document.querySelector('.b-1').onclick = t1;
 // ваше событие здесь!!!
 
 // Task 2 ============================================
