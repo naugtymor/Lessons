@@ -5,10 +5,10 @@ class Goods2 extends Goods {
     }
     draw() {
         if (this.sale == true) {
-            document.querySelector(this.out).innerHTML = `Sales`;
+            document.querySelector(this.out).innerHTML = `<div>SALES <span class="material-icons">${this.image}</span> ${this.name} ${this.amount}</div>`;
         }
         else {
-            document.querySelector(this.out).innerHTML = `Sales not found`;
+            document.querySelector(this.out).innerHTML = `<div><span class="material-icons">${this.image}</span> ${this.name} ${this.amount}</div>`;
         }
     }
 }
